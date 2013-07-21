@@ -14,5 +14,5 @@ class Post(models.Model):
     note = models.CharField(max_length=250)
     slug = models.SlugField(max_length=150, unique=True, blank=True)
     image = models.ImageField(upload_to=image_file_name, blank=True)
-    video_url = models.URLField(max_length=400, null=True)
+    video_url = models.URLField(max_length=400, null=True, blank=True)
     date_added = models.DateTimeField(auto_now_add=True)
