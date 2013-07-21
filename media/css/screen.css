@@ -66,3 +66,8 @@ a img {
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
+
+/* line 1, ../sass/pages/_feed.scss */
+.nav-bar {
+  background-color: red;
+}
