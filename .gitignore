@@ -4,3 +4,4 @@ active.py
 */.sass-cache/*
 *.DS_Store
 local_db
+media/img/post/*
