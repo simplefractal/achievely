@@ -5,9 +5,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
-from django.db.models.signals import post_save
 
-from .listeners import send_email_notification
 from util.thumborz import thumb
 
 
@@ -59,6 +57,3 @@ class Post(models.Model):
         if not self.slug:
             self.slug = User.objects.make_random_password()
         return super(Post, self).save(*args, **kwargs)
-
-
-post_save.connect(send_email_notification, sender=Post)
