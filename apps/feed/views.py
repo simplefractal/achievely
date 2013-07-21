@@ -16,6 +16,7 @@ class HomeView(TemplateView):
         }
 
     def post(self, request, *args, **kwargs):
+        form_data = {}
         form_data['user'] = request.user.id
         form_data['note'] = request.POST.get('note')
         form_data['video_url'] = request.POST.get('video_url')
