@@ -1,9 +1,8 @@
 from django.core.mail import send_mail
 
-from feed.models import Post
-
 
 def notify(post_id):
+    from feed.models import Post
     post = Post.objects.get(id=post_id)
     goal_title = None
     if "#" in post.note:
