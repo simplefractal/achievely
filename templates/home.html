@@ -23,16 +23,22 @@
               Here will be the input box
           </div>
           <div class="feed-posts-box">
+              {% for post in posts %}
               <div class="feed-post">
                   <div class="feed-post-icon">
-                     <img src="{{ MEDIA_URL }}img/henry.jpg"/ width="50" height="50">
+                     <img src="{{ MEDIA_URL }}{{ post.user_icon_url }}"/ width="50" height="50">
                   </div>
-                  <div class="feed-post-username">Henry Xie</div>
-                  <div class="feed-post-note">getting dynamics better finally #polonaise</div>
+                  <div class="feed-post-username">{{ post.user.first_name }} {{ post.user.last_name }}</div>
+                  <div class="feed-post-note">{{ post.note }}</div>
                   <div class="feed-post-media-content">
-                      <iframe src="http://player.vimeo.com/video/69909709?badge=0&amp;color=F3257A" width="250" height="140" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                      {% if post.video_url %}
+                      <iframe src="{{ post.video_url }}" width="250" height="140" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                      {% elif post.image %}
+                      <img src="{{ image.url }} width="100" height="100"/>
+                      {% endif %}
                   </div>
               </div>
+              {% endfor %}
           </div>
       </div>
   </body>

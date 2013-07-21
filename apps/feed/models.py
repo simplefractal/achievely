@@ -22,3 +22,7 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.note
+
+    @property
+    def user_icon_url(self):
+        return u'img/username/{}'.format(self.user.username)
