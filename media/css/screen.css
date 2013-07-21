@@ -68,6 +68,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 1, ../sass/pages/_feed.scss */
+.feed-body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* line 4, ../sass/pages/_feed.scss */
 .nav-bar {
-  background-color: red;
+  padding: 15px 20px;
+  background-color: #1bbc9b;
+  color: #fff;
+  font-size: 18px;
 }
