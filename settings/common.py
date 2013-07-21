@@ -2,6 +2,7 @@ import os
 
 DEBUG = True
 LOCAL = False
+PRODUCTION = False
 TEMPLATE_DEBUG = DEBUG
 ADMINS = (
     ('Henry Xie', 'xie1989@gmail.com'),
