@@ -70,12 +70,43 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 1, ../sass/pages/_feed.scss */
 .feed-body {
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 
-/* line 4, ../sass/pages/_feed.scss */
+/* line 5, ../sass/pages/_feed.scss */
 .nav-bar {
   padding: 15px 20px;
   background-color: #1bbc9b;
   color: #fff;
   font-size: 18px;
+}
+
+/* line 12, ../sass/pages/_feed.scss */
+.feed-main-content {
+  color: #383838;
+  padding: 30px 120px;
+}
+
+/* line 17, ../sass/pages/_feed.scss */
+.feed-posts-box {
+  margin-top: 30px;
+}
+
+/* line 21, ../sass/pages/_feed.scss */
+.feed-post-icon {
+  float: left;
+  padding: 5px 15px 5px 0;
+}
+
+/* line 26, ../sass/pages/_feed.scss */
+.feed-post-username {
+  padding-top: 5px;
+  font-size: 16px;
+  color: #2C9680;
+  margin-bottom: 5px;
+}
+
+/* line 33, ../sass/pages/_feed.scss */
+.feed-post-media-content {
+  padding: 10px 0;
 }
