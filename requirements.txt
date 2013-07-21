@@ -5,3 +5,4 @@ gunicorn==0.14.2
 South==0.7.4
 django-extensions==0.7.1
 boto==2.2.2
+PIL==1.1.7
