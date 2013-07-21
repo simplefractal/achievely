@@ -19,11 +19,7 @@ def notify(post_id):
     else:
         subject = "{} just made progress on a goal!".format(
             post.user.first_name)
-    body = "{}".format(post.note)
-    if post.video_url:
-        body = "{}\nHere is the video: {}".format(body, post.video_url)
-    elif post.image:
-        body = "{}\nCheck out this pic: {}".format(body, post.image.url)
+    body = "Check it out here: {}".format(post.detail_url)
     from_address = "Achieve.ly <e@achievely.com>"
     recipients = ["xie1989@gmail.com", "suneel0101@gmail.com"]
     send_mail(

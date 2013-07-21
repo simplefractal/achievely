@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 from django.db import models
 
 from util.thumborz import thumb
@@ -29,6 +30,16 @@ class Post(models.Model):
     def user_icon_url(self):
         path = '/media/img/user/{}.jpg'.format(self.user.username)
         return thumb(path, width=50, height=50, unsafe=True)
+
+    @property
+    def detail_url(self):
+        if settings.LOCAL:
+            domain = "http://127.0.0.1:8000"
+        else:
+            domain = "http://betterme.herokuapp.com"
+    return "{}{}".format(
+        domain
+        reverse('single_post', args=[self.id]))
 
     @property
     def image_url(self):
