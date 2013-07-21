@@ -11,6 +11,13 @@
   </head>
   <body class="feed-body">
       <div class="nav-bar">Achieve.ly</div>
+
+      <form id="add-post-form" action="{% url home %}" method="POST">
+        <div class="input-field">{{ form.note }}</div>
+        <div class="input-field">{{ form.image }}</div>
+        <input id="submit-button" type="submit" value="Post"/>
+      </form>
+
       <div class="feed-main-content">
           <div class="feed-add-post-box">
               Here will be the input box

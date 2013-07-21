@@ -1,18 +1,17 @@
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
-from django.views.generic import View
+from django.views.generic import TemplateView
 
 from .forms import PostForm
 
 
-def home(request):
-    template = 'home.html'
-    context = {}
-    return render_to_response(template,
-                              RequestContext(request, context))
+class HomeView(TemplateView):
+    template_name = 'home.html'
 
-
-class AddPostView(View):
+    def get_context_data(self, **kwargs):
+        return {
+            'form': PostForm(),
+        }
 
     def post(self, request, *args, **kwargs):
         form_data = request.POST.copy()
@@ -21,4 +20,4 @@ class AddPostView(View):
         if form.is_valid():
             form.save()
 
-        return HttpResponseRedirect(reverse('home'))
+        return self.get(request, *args, **kwargs)
