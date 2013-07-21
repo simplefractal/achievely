@@ -27,7 +27,7 @@ class Post(models.Model):
 
     @property
     def user_icon_url(self):
-        path = '/img/user/{}.jpg'.format(self.user.username)
+        path = '/media/img/user/{}.jpg'.format(self.user.username)
         return thumb(path, width=50, height=50, unsafe=True)
 
     @property
