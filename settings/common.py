@@ -1,4 +1,4 @@
-# Django settings for your project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'south',
     'django_extensions',
     'feed',
+    'emailer',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -156,6 +157,13 @@ LOGGING = {
     }
 }
 
+# THUMBOR SETTINGS
 THUMBOR_KEY = 'unsafe'
-
 THUMBOR_BASE_URL = 'http://thumbor.herokuapp.com'
+
+# EMAIL SETTINGS
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME')
+EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
