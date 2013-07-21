@@ -155,3 +155,7 @@ LOGGING = {
         },
     }
 }
+
+THUMBOR_KEY = 'unsafe'
+
+THUMBOR_BASE_URL = 'http://thumbor.herokuapp.com'

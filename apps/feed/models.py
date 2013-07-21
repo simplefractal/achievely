@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.contrib.auth.models import User
 from django.db import models
 
+from util.thumborz import thumb
+
 
 def image_file_name(instance, filename):
     filename, ext = filename.split('.')
@@ -25,7 +27,12 @@ class Post(models.Model):
 
     @property
     def user_icon_url(self):
-        return u'img/user/{}.jpg'.format(self.user.username)
+        path = '/img/user/{}.jpg'.format(self.user.username)
+        return thumb(path, width=50, height=50, unsafe=True)
+
+    @property
+    def image_url(self):
+        return thumb(self.image, width=600, height=0, unsafe=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
