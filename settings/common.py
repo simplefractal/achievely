@@ -123,7 +123,7 @@ INSTALLED_APPS = (
     'gunicorn',
     'south',
     'django_extensions',
-    'achievely',
+    'feed',
 )
 
 # A sample logging configuration. The only tangible logging
