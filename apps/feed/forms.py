@@ -7,5 +7,5 @@ class PostForm(ModelForm):
         model = Post
         fields = ('user', 'note', 'image', 'video_url')
         widgets = {
-            'note': Textarea(attrs={'cols': 80, 'rows': 3}),
+            'note': Textarea(attrs={'cols': 82, 'rows': 4}),
         }
