@@ -93,12 +93,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 21, ../sass/pages/_feed.scss */
+.feed-post {
+  margin: 15px 0;
+}
+
+/* line 25, ../sass/pages/_feed.scss */
 .feed-post-icon {
   float: left;
   padding: 5px 15px 5px 0;
 }
 
-/* line 26, ../sass/pages/_feed.scss */
+/* line 30, ../sass/pages/_feed.scss */
 .feed-post-username {
   padding-top: 5px;
   font-size: 16px;
@@ -106,7 +111,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-bottom: 5px;
 }
 
-/* line 33, ../sass/pages/_feed.scss */
+/* line 37, ../sass/pages/_feed.scss */
 .feed-post-media-content {
   padding: 10px 0;
 }

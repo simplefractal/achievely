@@ -25,4 +25,4 @@ class Post(models.Model):
 
     @property
     def user_icon_url(self):
-        return u'img/username/{}'.format(self.user.username)
+        return u'img/user/{}.jpg'.format(self.user.username)
