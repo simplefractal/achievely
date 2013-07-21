@@ -6,8 +6,8 @@ from .models import Post
 
 class PostAdmin(admin.ModelAdmin):
     raw_id_fields = ('user',)
-    fields = ('user', 'note', 'image', 'video_url')
-    list_display = ('user', 'note', 'image', 'video_url', 'date_added')
+    fields = ('user', 'note', 'image', 'video')
+    list_display = ('user', 'note', 'image', 'video', 'date_added')
     search_fields = ['note']
 
 

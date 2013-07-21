@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.db import models
@@ -15,12 +16,19 @@ def image_file_name(instance, filename):
     return 'img/post/{}'.format(filename)
 
 
+def video_file_name(instance, filename):
+    filename, ext = filename.split('.')
+    code = instance.slug
+    filename = "{}.{}".format(code, ext)
+    return 'video/post/{}'.format(filename)
+
+
 class Post(models.Model):
     user = models.ForeignKey('auth.User')
     note = models.CharField(max_length=250)
     slug = models.SlugField(max_length=150, unique=True, blank=True)
     image = models.ImageField(upload_to=image_file_name, blank=True)
-    video_url = models.URLField(max_length=400, null=True, blank=True)
+    video = models.FileField(upload_to=video_file_name, blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True)
 
     def __unicode__(self):
@@ -37,9 +45,7 @@ class Post(models.Model):
             domain = "http://127.0.0.1:8000"
         else:
             domain = "http://betterme.herokuapp.com"
-    return "{}{}".format(
-        domain
-        reverse('single_post', args=[self.id]))
+        return "{}{}".format(domain, reverse('single_post', args=[self.id]))
 
     @property
     def image_url(self):

@@ -5,3 +5,4 @@ active.py
 *.DS_Store
 local_db
 media/img/post/*
+media/video/post/*
