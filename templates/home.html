@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Achieve.ly</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <link href="{{ MEDIA_URL }}css/screen.css" rel="stylesheet">
-  </head>
-  <body class="feed-body">
-      <div class="nav-bar">Achieve.ly</div>
-
+{% extends 'base.html' %}
+{% block main_content %}
       <form id="add-post-form" action="{% url home %}" method="POST" enctype="multipart/form-data">
         <div class="input-field">{{ form.note }}</div>
         <div class="input-field">{{ form.image }}</div>
@@ -23,22 +11,8 @@
           </div>
           <div class="feed-posts-box">
               {% for post in posts %}
-              <div class="feed-post">
-                  <div class="feed-post-icon">
-                     <img src="{{ post.user_icon_url }}" width="50" height="50"/>
-                  </div>
-                  <div class="feed-post-username">{{ post.user.first_name }} {{ post.user.last_name }}</div>
-                  <div class="feed-post-note">{{ post.note }}</div>
-                  <div class="feed-post-media-content">
-                      {% if post.video_url %}
-                      <iframe src="{{ post.video_url }}" width="500" height="241" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                      {% elif post.image %}
-                      <img src="{{ post.image_url }}"/>
-                      {% endif %}
-                  </div>
-              </div>
+              {% include 'feed_post.html' %}
               {% endfor %}
           </div>
       </div>
-  </body>
-</html>
+{% endblock %}
