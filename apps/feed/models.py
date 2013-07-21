@@ -7,7 +7,7 @@ from django.db import models
 
 def image_file_name(instance, filename):
     filename, ext = filename.split('.')
-    code = instance.slug or User.objects.make_random_password()
+    code = instance.slug
     filename = "{}.{}".format(code, ext)
     return 'img/post/{}'.format(filename)
 
@@ -26,3 +26,8 @@ class Post(models.Model):
     @property
     def user_icon_url(self):
         return u'img/user/{}.jpg'.format(self.user.username)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = User.objects.make_random_password()
+        return super(Post, self).save(*args, **kwargs)

@@ -16,9 +16,12 @@ class HomeView(TemplateView):
         }
 
     def post(self, request, *args, **kwargs):
-        form_data = request.POST.copy()
+        form_data['user'] = request.user.id
+        form_data['note'] = request.POST.get('note')
+        form_data['video_url'] = request.POST.get('video_url')
 
         form = PostForm(form_data, request.FILES)
+
         if form.is_valid():
             form.save()
 

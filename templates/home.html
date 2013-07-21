@@ -12,7 +12,7 @@
   <body class="feed-body">
       <div class="nav-bar">Achieve.ly</div>
 
-      <form id="add-post-form" action="{% url home %}" method="POST">
+      <form id="add-post-form" action="{% url home %}" method="POST" enctype="multipart/form-data">
         <div class="input-field">{{ form.note }}</div>
         <div class="input-field">{{ form.image }}</div>
         <input id="submit-button" type="submit" value="Post"/>
