@@ -2,7 +2,6 @@ import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-
 ADMINS = (
     ('Henry Xie', 'xie1989@gmail.com'),
     ('Suneel Chakravorty', 'suneel0101@gmail.com'),
@@ -167,3 +166,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_HOST_USER = os.environ.get('SENDGRID_USERNAME')
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_PASSWORD')
+
+# AWS
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_BUCKET_NAME = 'betterme'
