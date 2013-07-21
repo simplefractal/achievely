@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^$', 'feed.views.home', name='home'),
+    url(r'^post/(?P<_id>[0-9]+)/$', 'feed.views.single_post', name='single_post'),
     url(r'^admin/', include(admin.site.urls)),
 )
 
