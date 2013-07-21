@@ -85,25 +85,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .feed-main-content {
   color: #383838;
   padding: 30px 120px;
+  margin: 0 auto;
 }
 
-/* line 17, ../sass/pages/_feed.scss */
+/* line 18, ../sass/pages/_feed.scss */
 .feed-posts-box {
   margin-top: 30px;
 }
 
-/* line 21, ../sass/pages/_feed.scss */
+/* line 22, ../sass/pages/_feed.scss */
 .feed-post {
   margin: 15px 0;
 }
 
-/* line 25, ../sass/pages/_feed.scss */
+/* line 26, ../sass/pages/_feed.scss */
 .feed-post-icon {
   float: left;
   padding: 5px 15px 5px 0;
 }
 
-/* line 30, ../sass/pages/_feed.scss */
+/* line 31, ../sass/pages/_feed.scss */
 .feed-post-username {
   padding-top: 5px;
   font-size: 16px;
@@ -111,7 +112,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   margin-bottom: 5px;
 }
 
-/* line 37, ../sass/pages/_feed.scss */
+/* line 38, ../sass/pages/_feed.scss */
 .feed-post-media-content {
   padding: 10px 0;
 }
