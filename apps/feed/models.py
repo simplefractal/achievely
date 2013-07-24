@@ -12,12 +12,12 @@ from util.thumborz import thumb
 
 
 def image_file_name(instance, filename):
-    ext = filename.split('.')[:-1]
+    ext = filename.split('.')[-1]
     return 'img/post/{}.{}'.format(instance.slug, ext)
 
 
 def video_file_name(instance, filename):
-    ext = filename.split('.')[:-1]
+    ext = filename.split('.')[-1]
     return 'video/post/{}.{}'.format(instance.slug, ext)
 
 
