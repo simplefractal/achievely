@@ -12,17 +12,13 @@ from util.thumborz import thumb
 
 
 def image_file_name(instance, filename):
-    filename, ext = filename.split('.')
-    code = instance.slug
-    filename = "{}.{}".format(code, ext)
-    return 'img/post/{}'.format(filename)
+    ext = filename.split('.')[:-1]
+    return 'img/post/{}.{}'.format(instance.slug, ext)
 
 
 def video_file_name(instance, filename):
-    filename, ext = filename.split('.')
-    code = instance.slug
-    filename = "{}.{}".format(code, ext)
-    return 'video/post/{}'.format(filename)
+    ext = filename.split('.')[:-1]
+    return 'video/post/{}.{}'.format(instance.slug, ext)
 
 
 class Post(models.Model):
