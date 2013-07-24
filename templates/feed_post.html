@@ -5,7 +5,7 @@
 
                   <div class="feed-post-username">{{ post.user.first_name }} {{ post.user.last_name }}</div>
                   <div class="feed-post-timestamp">
-                      {{ post.pretty_timestamp }}
+                      {{ post.date_added|date:"F n" }}
                   </div>
 
                   <div class="feed-post-note">{{ post.note }}</div>

@@ -37,10 +37,6 @@ class Post(models.Model):
         return self.note
 
     @property
-    def pretty_timestamp(self):
-        return self.date_added.strftime("%B %d")
-
-    @property
     def user_icon_url(self):
         path = '{}img/user/{}.jpg'.format(
             settings.MEDIA_URL,
@@ -70,5 +66,8 @@ class Comment(models.Model):
     post = models.ForeignKey(Post)
     text = models.CharField(max_length=250)
     date_added = models.DateTimeField(auto_now_add=True)
+
+    def __unicode__(self):
+        return u"{}:{}".format(self.user.username, self.text)
 
 post_save.connect(sync_media_s3, sender=Post)
