@@ -53,7 +53,7 @@ class Post(models.Model):
 
     @property
     def image_url(self):
-        return thumb(self.image, width=600, height=0, unsafe=True)
+        return thumb(self.image, width=600, height=400, fit_in=True, unsafe=True)
 
     def save(self, *args, **kwargs):
         if not self.slug:
