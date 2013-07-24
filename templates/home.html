@@ -1,11 +1,5 @@
 {% extends 'base.html' %}
 {% block main_content %}
-      <form id="add-post-form" action="{% url home %}" method="POST" enctype="multipart/form-data">
-        <div class="input-field">{{ form.note }}</div>
-        <div class="input-field">{{ form.image }}</div>
-        <input id="submit-button" type="submit" value="Post"/>
-      </form>
-
       <div class="feed-main-content">
           <div class="feed-add-post-box">
           </div>
