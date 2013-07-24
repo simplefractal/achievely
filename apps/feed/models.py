@@ -65,4 +65,10 @@ class Post(models.Model):
         return super(Post, self).save(*args, **kwargs)
 
 
+class Comment(models.Model):
+    user = models.ForeignKey('auth.User')
+    post = models.ForeignKey(Post)
+    text = models.CharField(max_length=250)
+    date_added = models.DateTimeField(auto_now_add=True)
+
 post_save.connect(sync_media_s3, sender=Post)
