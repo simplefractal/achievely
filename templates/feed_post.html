@@ -2,7 +2,12 @@
                   <div class="feed-post-icon">
                      <img src="{{ post.user_icon_url }}" width="50" height="50"/>
                   </div>
+
                   <div class="feed-post-username">{{ post.user.first_name }} {{ post.user.last_name }}</div>
+                  <div class="feed-post-timestamp">
+                      {{ post.pretty_timestamp }}
+                  </div>
+
                   <div class="feed-post-note">{{ post.note }}</div>
                   <div class="feed-post-media-content">
                       {% if post.video %}

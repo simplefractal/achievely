@@ -37,6 +37,10 @@ class Post(models.Model):
         return self.note
 
     @property
+    def pretty_timestamp(self):
+        return self.date_added.strftime("%B %d")
+
+    @property
     def user_icon_url(self):
         path = '{}img/user/{}.jpg'.format(
             settings.MEDIA_URL,
