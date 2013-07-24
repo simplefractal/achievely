@@ -12,10 +12,16 @@
         {{ post.note }}
     </div>
     <div class="feed-post-media-content">
-    {% if post.video %}
-        <iframe src="{{ post.video.url }}" width="500" height="241" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-    {% elif post.image %}
+        {% if post.video %}
+        <video width="320" height="240" controls>
+            <source src="{{ post.video.url }}" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+            <object data="movie.mp4" width="320" height="240">
+              <embed src="movie.swf" width="320" height="240">
+            </object>
+          </video>
+        {% elif post.image %}
         <img src="{{ post.image_url }}"/>
-    {% endif %}
+        {% endif %}
     </div>
 </div>
